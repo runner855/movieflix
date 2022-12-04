@@ -1,8 +1,12 @@
 import React from "react";
 import "./App.css";
+import { NavBar } from "./components/NavBar/NavBar";
 
-function App() {
-  return <div className="App">Movieflix</div>;
-}
-
-export default App;
+export const App = () => {
+  return (
+    <div className="App">
+      Movieflix
+      <NavBar />
+    </div>
+  );
+};
