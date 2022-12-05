@@ -1,0 +1,38 @@
+img {
+  width: 16em;
+  height: 20em;
+  border-radius: 1em;
+  margin: 2em;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.toprated_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.title {
+  font-size: 1.4em;
+  overflow-wrap: break-word;
+  color: #fff;
+  font-weight: 800;
+}
+
+.title:hover {
+  color: #000;
+}
+
+.toprated_list {
+  inline-size: 300px;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.toprated_list :hover {
+  cursor: pointer;
+}

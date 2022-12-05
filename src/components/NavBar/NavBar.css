@@ -1,0 +1,40 @@
+.navbar_container {
+  list-style: none;
+  overflow: hidden;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar_container li {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  margin-left: 5px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.navbar_container li :hover {
+  color: black;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(140, 214, 238);
+}
+
+.switch {
+  margin-top: 1em;
+  margin-left: 30em;
+}
+
+.switch_element {
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+}
+
+img {
+  height: 20%;
+}
