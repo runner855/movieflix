@@ -1,0 +1,12 @@
+.movies_filter {
+  margin: 1em 0em 0em 25em;
+  height: 3em;
+}
+
+input {
+  height: 2em;
+  border-radius: 2em;
+  border: solid #000 0em;
+  padding: 0.8em;
+  background-color: rgb(140, 214, 238);
+}

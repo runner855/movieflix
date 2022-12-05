@@ -1,11 +1,11 @@
-img {
+.movie_poster {
   width: 16em;
   height: 20em;
   border-radius: 1em;
   margin: 2em;
 }
 
-img:hover {
+.movie_poster:hover {
   cursor: pointer;
 }
 

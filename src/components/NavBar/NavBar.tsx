@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { LanguageEnum } from "../../types/Apptypes";
 import { NavBarElements } from "../../Utilities/utility";
+import { MoviesFilter } from "../MoviesFilter/MoviesFilter";
 import "../NavBar/NavBar.css";
 
 type NavBarProps = {
@@ -19,6 +20,7 @@ export const NavBar = ({ languages }: NavBarProps) => {
           </li>
         );
       })}
+      <MoviesFilter />
     </ul>
   );
 };
