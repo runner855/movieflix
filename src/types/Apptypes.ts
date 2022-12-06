@@ -1,6 +1,6 @@
 export enum AppUrls {
   UPCOMING = "/upcoming",
-  TOP_RATED = "/top-rated",
+  TOP_RATED = "/top_rated",
   POPULAR = "/popular",
 }
 
@@ -28,4 +28,8 @@ export interface MoviesProps {
   video: boolean;
   vote_average: number;
   vote_count: number;
+}
+
+export interface MoviesDataProps {
+  movies: MoviesProps[];
 }

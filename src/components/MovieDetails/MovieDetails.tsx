@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "antd";
 import "../MovieDetails/MovieDetails.css";
 import MoviesCall from "../../api/MoviesCall";
 import { useParams } from "react-router-dom";
 import { MoviesProps } from "../../types/Apptypes";
 import moment from "moment";
-
-type MovieDetailsProps = {
-  backdrop_path: string;
-  id: number;
-  name: string;
-  poster_path: string;
-};
 
 export const MovieDetails = () => {
   const [details, setDetails] = useState<MoviesProps | undefined>();

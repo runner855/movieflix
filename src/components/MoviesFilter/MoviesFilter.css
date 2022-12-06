@@ -1,5 +1,5 @@
 .movies_filter {
-  margin: 1em 0em 0em 25em;
+  margin: 1em 0em 0em 2em;
   height: 3em;
 }
 
@@ -9,4 +9,6 @@ input {
   border: solid #000 0em;
   padding: 0.8em;
   background-color: rgb(140, 214, 238);
+  border: solid #fff 0.2em;
+  font-weight: 800;
 }

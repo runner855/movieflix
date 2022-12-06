@@ -9,7 +9,7 @@
   cursor: pointer;
 }
 
-.upcoming_container {
+.data {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -1,6 +1,7 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { LanguageEnum } from "../../types/Apptypes";
+import MoviesCall from "../../api/MoviesCall";
+import { AppUrls, LanguageEnum, MoviesProps } from "../../types/Apptypes";
 import { NavBarElements } from "../../Utilities/utility";
 import { MoviesFilter } from "../MoviesFilter/MoviesFilter";
 import "../NavBar/NavBar.css";
@@ -11,6 +12,17 @@ type NavBarProps = {
 };
 
 export const NavBar = ({ languages }: NavBarProps) => {
+  const [filterData, setFilterData] = useState<MoviesProps[] | undefined>();
+
+  useEffect(() => {
+    MoviesCall.get(
+      `${AppUrls.UPCOMING}?api_key=${process.env.REACT_APP_API_KEY}`,
+      {}
+    ).then((res) => {
+      setFilterData(res.data.results);
+    });
+  }, []);
+
   return (
     <ul className="navbar_container">
       {NavBarElements.map((item, index) => {
@@ -20,7 +32,6 @@ export const NavBar = ({ languages }: NavBarProps) => {
           </li>
         );
       })}
-      <MoviesFilter />
     </ul>
   );
 };
