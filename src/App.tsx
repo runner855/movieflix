@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { NavBar } from "./components/NavBar/NavBar";
-import { LanguageEnum, AppUrls, MoviesProps } from "./types/Apptypes";
+import { LanguageEnum, AppUrls } from "./types/Apptypes";
 import { MovieDetails } from "./components/MovieDetails/MovieDetails";
 import { PageStructure } from "./components/PageStructure/PageStructure";
 
 export const App = () => {
   const [languages, setLanguages] = useState<LanguageEnum>(LanguageEnum.EN);
-  const [data, setData] = useState();
   return (
     <div className="App">
       <NavBar

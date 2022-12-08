@@ -9,6 +9,7 @@ type ContentLayoutProps = {
 
 export const ContentLayout = ({ movies }: ContentLayoutProps) => {
   const navigate = useNavigate();
+
   return (
     <div className="upcoming_container">
       <div className="data">

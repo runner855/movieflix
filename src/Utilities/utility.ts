@@ -4,6 +4,7 @@ import {
   POPULAR_LABEL,
 } from "../constants/dictionary";
 import { AppUrls } from "../types/Apptypes";
+import { NOW_PLAYING_LABEL } from "../constants/dictionary";
 
 export const NavBarElements = [
   {
@@ -17,6 +18,11 @@ export const NavBarElements = [
   {
     navbar_element: POPULAR_LABEL,
     to: AppUrls.POPULAR,
+  },
+
+  {
+    navbar_element: NOW_PLAYING_LABEL,
+    to: AppUrls.NOWPLAYING,
   },
 ];
 

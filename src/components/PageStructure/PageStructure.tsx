@@ -5,9 +5,7 @@ import "../PageStructure/PageStructure.css";
 import { useParams } from "react-router-dom";
 import { MoviesFilter } from "../MoviesFilter/MoviesFilter";
 import { ContentLayout } from "../ContentLayout/ContentLayout";
-import { LanguageFilter } from "../LanguageFilter/LanguageFilter";
 import { Select } from "antd";
-import { Movieslanguages } from "../../Utilities/utility";
 
 export const PageStructure = () => {
   const params = useParams();
@@ -60,12 +58,20 @@ export const PageStructure = () => {
         <Select
           className="select"
           defaultValue="Select"
-          options={Movieslanguages}
           onChange={handleSelect}
           value={language}
+          style={{ marginTop: 14, marginLeft: 10, width: 100 }}
+          options={Array.from(
+            new Set(movies && movies.map((obj) => obj.original_language))
+          ).map((period) => {
+            return {
+              value: period,
+              label: period.toUpperCase(),
+            };
+          })}
         />
       </div>
-
+            
       <ContentLayout
         movies={value ? results : movies && language ? movielanguage : movies}
       />

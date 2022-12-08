@@ -2,6 +2,7 @@ export enum AppUrls {
   UPCOMING = "/upcoming",
   TOP_RATED = "/top_rated",
   POPULAR = "/popular",
+  NOWPLAYING = "/now_playing",
 }
 
 export enum LanguageEnum {
