@@ -23,6 +23,14 @@
   font-weight: 800;
 }
 
+.vote {
+  font-size: 1.4em;
+  overflow-wrap: break-word;
+  color: #fff;
+  font-weight: 800;
+  color: green;
+}
+
 .title:hover {
   color: #000;
 }

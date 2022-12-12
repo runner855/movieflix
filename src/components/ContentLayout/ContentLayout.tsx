@@ -31,6 +31,7 @@ export const ContentLayout = ({ movies }: ContentLayoutProps) => {
                   alt="movie_poster"
                 />
                 <div className="title">{item.title}</div>
+                <div className="vote">{item.vote_average}</div>
               </div>
             );
           })}

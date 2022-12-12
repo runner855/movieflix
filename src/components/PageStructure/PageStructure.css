@@ -37,6 +37,6 @@
   cursor: pointer;
 }
 
-/* .dropdown_filter {
-  margin: 1em 0em 0em 2em;
-} */
+.ant-tabs {
+  color: white !important;
+}

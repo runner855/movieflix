@@ -5,7 +5,8 @@ import "../PageStructure/PageStructure.css";
 import { useParams } from "react-router-dom";
 import { MoviesFilter } from "../MoviesFilter/MoviesFilter";
 import { ContentLayout } from "../ContentLayout/ContentLayout";
-import { Select } from "antd";
+import { Button, Select } from "antd";
+import Item from "antd/es/list/Item";
 
 export const PageStructure = () => {
   const params = useParams();
@@ -13,10 +14,12 @@ export const PageStructure = () => {
   const [movies, setMovies] = useState<MoviesProps[] | undefined>();
   const [value, setValue] = useState<string>("");
   const [results, setResults] = useState<MoviesProps[] | undefined>();
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState<string>();
   const [movielanguage, setMovieLanguage] = useState<
     MoviesProps[] | undefined
   >();
+
+  const [vote, setVote] = useState<MoviesProps[] | undefined>();
 
   useEffect(() => {
     params.page &&
@@ -38,15 +41,40 @@ export const PageStructure = () => {
     setResults(filteredMovies);
   }, [value, movies]);
 
-  const handleSelect = (val: string) => {
-    setLanguage(val);
-  };
-
   useEffect(() => {
     const filteredMovieLanguage =
       movies && movies.filter((item) => item.original_language === language);
     setMovieLanguage(filteredMovieLanguage);
   }, [language, movies]);
+
+  const handleSelect = (val: string) => {
+    setLanguage(val);
+  };
+
+  const handleSort = () => {
+    const sortMovies =
+      movies &&
+      movies.sort((a, b) => (a.vote_average > b.vote_average ? -1 : 1));
+    setVote(sortMovies);
+  };
+
+  <div className="dropdown_filter">
+    <Select
+      defaultValue={"Select"}
+      className="select"
+      onChange={handleSelect}
+      value={language}
+      style={{ marginTop: 14, marginLeft: 10, width: 100 }}
+      options={Array.from(
+        new Set(movies && movies.map((item) => item.original_language))
+      ).map((movielanguage) => {
+        return {
+          value: movielanguage,
+          label: movielanguage.toUpperCase(),
+        };
+      })}
+    />
+  </div>;
 
   return (
     <div className="upcoming_container">
@@ -57,19 +85,28 @@ export const PageStructure = () => {
       <div className="dropdown_filter">
         <Select
           className="select"
-          defaultValue="Select"
+          placeholder="Select"
           onChange={handleSelect}
           value={language}
           style={{ marginTop: 14, marginLeft: 10, width: 100 }}
           options={Array.from(
-            new Set(movies && movies.map((obj) => obj.original_language))
-          ).map((period) => {
+            new Set(movies && movies.map((item) => item.original_language))
+          ).map((movielanguage) => {
             return {
-              value: period,
-              label: period.toUpperCase(),
+              value: movielanguage,
+              label: movielanguage.toUpperCase(),
             };
           })}
         />
+      </div>
+      <div className="vote_sort">
+        <Button
+          type="primary"
+          onClick={handleSort}
+          style={{ marginTop: 14, marginLeft: 50, width: 130 }}
+        >
+          Order Movies
+        </Button>
       </div>
             
       <ContentLayout

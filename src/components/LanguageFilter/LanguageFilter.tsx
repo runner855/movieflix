@@ -1,20 +1,7 @@
-import React, { useState } from "react";
-import { Select } from "antd";
-import { Movieslanguages } from "../../Utilities/utility";
+import React from "react";
+
 import "../LanguageFilter/LanguageFilter.css";
 
 export const LanguageFilter = () => {
-  const handleChange = (langvalue: string) => {
-    console.log(langvalue);
-  };
-  return (
-    <div>
-      <Select
-        className="select"
-        defaultValue="Select"
-        options={Movieslanguages}
-        onChange={handleChange}
-      />
-    </div>
-  );
+  return <div>filter</div>;
 };

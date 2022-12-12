@@ -32,5 +32,10 @@ export interface MoviesProps {
 }
 
 export interface MoviesDataProps {
-  movies: MoviesProps[];
+  movies: MoviesProps[] | undefined;
+}
+
+export interface MovieFilterProps {
+  language: string;
+  movielanguage: MoviesProps[] | undefined;
 }
