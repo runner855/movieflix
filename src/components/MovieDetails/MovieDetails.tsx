@@ -21,7 +21,6 @@ export const MovieDetails = () => {
   const averageVote =
     details && (Math.round(details.vote_average * 100) / 100).toFixed(1);
 
-  console.log("details", details);
   return (
     <div>
       {details && (

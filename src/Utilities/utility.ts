@@ -25,17 +25,3 @@ export const NavBarElements = [
     to: AppUrls.NOWPLAYING,
   },
 ];
-
-export const Movieslanguages = [
-  { value: "en", label: "English" },
-  { value: "es", label: "Spanish" },
-  { value: "vi", label: "Vietnamese" },
-  { value: "ja", label: "Japanese" },
-  { value: "ko", label: "Korean" },
-  { value: "fi", label: "Finnish" },
-  { value: "hi", label: "Hindi" },
-  { value: "it", label: "Italian" },
-  { value: "is", label: "Icelandic" },
-  { value: "fr", label: "French" },
-  { value: "uk", label: "Ukrainian" },
-];
