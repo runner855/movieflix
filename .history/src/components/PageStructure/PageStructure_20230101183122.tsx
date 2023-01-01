@@ -8,7 +8,7 @@ import { ContentLayout } from "../ContentLayout/ContentLayout";
 import { Button, Select } from "antd";
 
 export const PageStructure = () => {
-  console.log(process.env.REACT_APP_API_KEY)
+  console.log(process.env)
   const params = useParams();
 
   const [movies, setMovies] = useState<MoviesProps[] | undefined>();
